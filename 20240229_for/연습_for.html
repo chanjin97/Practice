@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .viewWrap{
+            /* display: flex; */
+            /* justify-content: space-between; */
+            /* background-color: gold; */
+        }
+    </style>
+
+</head>
+<body>
+
+    <script>
+        document.write("<div class='viewWrap'>")
+        for (let i = 1; i <= 19; i++) {
+            document.write("<hr>")
+            document.write(i + "단" + "<br>")
+            for (let j = 0; j <=19; j++){
+                document.write(i + " x " + j + " = " + i*j + "<br>")
+            }
+            
+        }
+        document.write("</div>")
+    </script>
+
+</body>
+</html>
