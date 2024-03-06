@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        <input type="text" value="" class="todo">
+        <button class="btn">오늘의 할일</button>
+
+        <ul class="vList">
+
+        </ul>
+
+        <script>
+
+
+            const todoElm = document.getElementsByClassName('todo')[0]
+            const btnElm = document.getElementsByClassName('btn')[0]
+            const viewList = ["하이","바이","수이"];
+
+            // btnElm.addEventListener("click",function(){})
+            btnElm.addEventListener("click",function(){
+                // console.log(todoElm.value)
+                viewList.push(todoElm.value)
+                todoElm.value = ''
+
+                let textList = '' //문자초기값
+                 for(let i=0; i<viewList.length; i++){
+                // textList = textList + `<li>${viewList[i]}</li>`
+                textList += `<li>${viewList[i]}</li>`
+                }
+                console.log(textList);
+            })
+
+           
+            
+        </script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .vList{width: 300px;}
+
+        .vList > li{
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+    
+</head>
+<body>
+
+    <input type="text" value="" class="todo">
+    <button class="btn">데이터 전송 버튼</button>
+
+    <ul class="vList">
+
+    </ul>
+
+    <script>
+
+        const todoElm = document.getElementsByClassName('todo')[0]
+        const btnElm = document.getElementsByClassName('btn')[0]
+        const vListElm = document.getElementsByClassName('vList')[0]
+
+
+        const viewList = ["배찬진","몽몽","냥냥"];
+        
+
+
+        btnElm.addEventListener("click",function(){
+            
+            viewList.push(todoElm.value)
+            todoElm.value = ''
+
+            let textList = ''
+            for(let i=0; i<viewList.length; i++){
+                textList += `<li>${viewList[i]}</li>`
+            }
+
+            vListElm.innerHTML = textList;
+
+        })
+
+
+
+
+    </script>
+
+
+
+
+
+</body>
+</html>
