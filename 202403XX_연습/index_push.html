@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>push연습</title>
+</head>
+<body>
+
+    <input type="text" value="" class="todo">
+    <button class="btn">데이터 입력</button>
+
+    <ul class="vList">
+
+    </ul>
+    
+    <script>
+        const todoElm = document.getElementsByClassName("todo")[0];
+        const btnElm = document.getElementsByClassName("btn")[0];
+        const vListElm = document.getElementsByClassName("Vlist")[0]
+
+
+
+        let viewList = ["배찬진","냥냥이","몽몽이"];
+
+        btnElm.addEventListener("click",function(){
+            viewList.push(todoElm.value)
+            todoElm.value = ''
+
+            let textList = ''
+            for(let i=0; i<viewList.length; i++){
+                textList = textList + '<li>${viewList[i]}'
+            }
+
+            vListElm.innerHTML = textList;
+
+        })
+
+        
+
+    </script>
+    
+</body>
+</html>

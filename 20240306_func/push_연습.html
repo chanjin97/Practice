@@ -42,7 +42,7 @@
 
             let textList = ''
             for(let i=0; i<viewList.length; i++){
-                textList += `<li>${viewList[i]}</li>`
+                textList += `<li><div>${viewList[i]}</div> <div>삭제</div></li>`;
             }
 
             vListElm.innerHTML = textList;
