@@ -1,0 +1,16 @@
+@charset "ut-8";
+
+*{margin: 0;padding: 0;box-sizing: border-box;}
+a:link,a:visited{text-decoration: none;color: #333}
+ul,li{list-style: none;}
+
+.toggle_button{
+    width: 20px;
+    height: 20px;
+    background-color: skyblue;
+}
+
+.bar{
+    color: black;
+
+}
