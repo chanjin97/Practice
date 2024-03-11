@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      h3 {
+        width: 300px;
+        height: 100px;
+        border-right-color: skyblue;
+
+        /* 본인이 center에 놓는거 */
+        /* margin: 0 auto; */
+
+        /* position: absolute;
+        left: 50%;
+        top: 50%; */
+        /* margin-left: calc(-300px / 2);
+        margin-top: calc(-100px / 2); */
+
+        /* transform: translateX(-50%) translateY(-50%); */
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+        가운데 정렬
+        display:/
+        block : width,height
+        inline : width(x), height(x)
+        inline-block : width,height
+        flex : width,height
+
+        margin: 0 auto;
+
+    -->
+
+    <h3>test</h3>
+
+    <div class="box1">
+      <div class="cir circle1">1</div>
+      <div class="cir circle1">2</div>
+    </div>
+  </body>
+</html>
