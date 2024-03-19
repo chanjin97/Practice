@@ -4,16 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js"
       integrity="sha512-PJa3oQSLWRB7wHZ7GQ/g+qyv6r4mbuhmiDb8BjSFZ8NZ2a42oTtAq5n0ucWAwcQDlikAtkub+tPVCw4np27WCg=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-  </head>
-  <body>
     <script>
-      //   var xhttp = new XMLHttpRequest();
+      // var xhr = new XMLHttpRequest();
       //   xhttp.onreadystatechange = function () {
       //     if (this.readyState == 4 && this.status == 200) {
       //       // Typical action to be performed when the document is ready:
@@ -23,15 +30,59 @@
       //   xhttp.open("GET", "filename", true);
       //   xhttp.send();
 
+      // jquery ajax
+      // $.ajax({
+      //   url: "https://dapi.kakao.com/v2/search/web",
+      //   type: "GET",
+      //   dataType: "json",
+      //   data: {
+      //     query: "테슬라",
+      //     sort: "recency",
+      //     size: 30,
+      //   },
+      //   beforeSend: onBefore,
+      //   success: onSuccess,
+      //   error: onError,
+      // });
+
+      // function onBefore(xhr) {
+      //   xhr.setRequestHeader(
+      //     "Authorization",
+      //     "KakaoAK 0fc4ad39477a8b2cda7158a2de653953"
+      //   );
+      // }
+
+      // function onSuccess(v) {
+      //   console.log(v);
+      // }
+      // function onError(xhr, status, error) {
+      //   console.log(xhr, status, error);
+      // }
+
       axios
-        .get("경로값", {
-          params: { query: "블랙핑크" },
-          headers: { Authorization: "kakaoAK" },
+        .get("https://dapi.kakao.com/v2/search/web?query=테슬라", {
+          params: { query: "테슬라", size: 50 },
+          headers: {
+            Authorization: "KakaoAK 0fc4ad39477a8b2cda7158a2de653953",
+          },
         })
+
         .then(function (v) {
-          console.log(v.data.documents);
+          console.log(v);
         })
-        .catch();
+        .catch(function () {});
+
+      // axios
+      //   .get("https://dapi.kakao.com/v2/search/web", {
+      //     params: { query: "블랙핑크" },
+      //     headers: {
+      //       Authorization: "KakaoAK 0fc4ad39477a8b2cda7158a2de653953",
+      //     },
+      //   })
+      //   .then(function (v) {
+      //     console.log(v.data.documents);
+      //   })
+      //   .catch();
     </script>
   </body>
 </html>
