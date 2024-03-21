@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width='device-width', initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      ul,
+      li {
+        list-style: none;
+      }
+      .wrap {
+        width: 400px;
+      }
+      .tabmenu {
+        display: flex;
+        gap: 20px;
+      }
+      .tabmenu li {
+        background-color: #eee;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 45%;
+      }
+      .tabmenu li.active {
+        background-color: skyblue;
+      }
+      .content div {
+        padding: 20px;
+        display: none;
+      }
+      .content div:nth-child(1) {
+        display: block;
+      }
+      .imgWrap {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <ul class="tabmenu">
+        <li class="active">tab1</li>
+        <li>tab2</li>
+        <li>tab3</li>
+      </ul>
+      <div class="content">
+        <div>
+          1. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos
+          deserunt veritatis harum iste optio libero quaerat doloremque quae in
+          sint? Ad excepturi ducimus hic aliquam odit adipisci itaque id ut.
+        </div>
+        <div>
+          2. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos
+          deserunt veritatis harum iste optio libero quaerat doloremque quae in
+          sint? Ad excepturi ducimus hic aliquam odit adipisci itaque id ut.
+        </div>
+        <div>
+          3. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos
+          deserunt veritatis harum iste optio libero quaerat doloremque quae in
+          sint? Ad excepturi ducimus hic aliquam odit adipisci itaque id ut.
+        </div>
+      </div>
+      <div class="imgView">
+        <div class="imgWrap">
+          <img src="./images/img1.jpg" alt="" />
+          <img src="./images/img2.jpg" alt="" />
+          <img src="./images/img3.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
