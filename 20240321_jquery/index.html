@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      ul,
+      li {
+        list-style: none;
+      }
+      .wrap {
+        width: 400px;
+      }
+      .tabmenu {
+        display: flex;
+      }
+      .tabmenu li {
+        padding: 10px 20px;
+        background-color: #eee;
+        cursor: pointer;
+      }
+      .tabmenu li.active {
+        background: skyblue;
+      }
+      .content div {
+        display: none;
+        padding: 20px;
+      }
+      .content div:nth-child(1) {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <ul class="tabmenu">
+        <li class="active">tqb1</li>
+        <li>tqb2</li>
+        <li>tqb3</li>
+      </ul>
+      <div class="content">
+        <div>
+          1. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi,
+          ipsa? Provident minus esse perspiciatis neque fuga! Nostrum, at dolor.
+          Quaerat, eos deserunt. Porro, corporis. Sit ex quas ullam eos
+          molestias?
+        </div>
+        <div>
+          2. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi,
+          ipsa? Provident minus esse perspiciatis neque fuga! Nostrum, at dolor.
+          Quaerat, eos deserunt. Porro, corporis. Sit ex quas ullam eos
+          molestias?
+        </div>
+        <div>
+          3. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi,
+          ipsa? Provident minus esse perspiciatis neque fuga! Nostrum, at dolor.
+          Quaerat, eos deserunt. Porro, corporis. Sit ex quas ullam eos
+          molestias?
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(".tabmenu>li").click(function () {
+        console.log($(this).index());
+        $(".tabmenu>li").removeClass("active");
+        $(this).addClass("active");
+
+        $(".content>div").css("display", "none");
+        $(".content>div").eq($(this).index()).css("display", "block");
+      });
+    </script>
+  </body>
+</html>
