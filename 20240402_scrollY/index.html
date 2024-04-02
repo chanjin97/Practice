@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html,
+      body {
+        height: 400vh;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      ul,
+      li {
+        list-style: none;
+      }
+      a:link,
+      a:visited {
+        text-decoration: none;
+        color: #222;
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        background-color: #ff71cd;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .header {
+        width: 100%;
+        height: 60px;
+        padding: 10px 16px;
+        display: flex;
+        /* justify-content: space-between; */
+        background: #86469c;
+        transition: 0.4s;
+      }
+
+      /*  fixed 를 사용하게되면은
+        width가 없기때문에 정해주어야한다 */
+      .header.fixed {
+        position: fixed;
+        background: #f2613f;
+      }
+      .header.fixed h1 {
+        color: white;
+      }
+      .header .nav {
+        margin-left: auto;
+        /* background: skyblue; */
+      }
+      .header .nav ul {
+        display: flex;
+        /* background: red; */
+        height: 100%;
+      }
+      .header .nav a {
+        /* display: block; */
+        height: 100%;
+        padding: 10px 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .header.fixed .nav a {
+        color: white;
+      }
+      .header .nav a:hover {
+        background-color: skyblue;
+      }
+      .content.block {
+        display: block;
+      }
+      .content {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+      }
+      .content .img {
+        /* width: 200px;
+        height: 200px;
+        overflow: hidden; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">test</div>
+
+    <div class="header">
+      <h1 class="logo">logo</h1>
+      <div class="nav">
+        <ul>
+          <li><a href="#">menu!</a></li>
+          <li><a href="#">menu2</a></li>
+          <li><a href="#">menu3</a></li>
+          <li><a href="#">menu4</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="content">
+      <div class="img">
+        <img src="../20240321_jquery/images/img1.jpg" alt="" />
+      </div>
+    </div>
+    <script>
+      const boxScroll = document.querySelector(".box");
+      const header = document.querySelector(".header");
+      const content = document.querySelector(".content");
+
+      boxScroll.innerHTML = window.pageYOffset;
+
+      window.addEventListener("scroll", function () {
+        let scrollY = window.pageYOffset;
+        console.log(scrollY);
+        boxScroll.innerHTML = scrollY;
+
+        //     if (scrollY > 200) {
+        //       header.setAttribute("style", "position:fixed");
+        //     } else {
+        //       header.setAttribute("style", "");
+        //     }
+        //   });
+
+        // fixed 를 사용하게되면은
+        // width가 없기때문에 정해주어야한다
+
+        if (scrollY > 200) {
+          header.classList.add("fixed");
+          content.classList.add("block");
+        } else {
+          header.classList.remove("fixed");
+          content.classList.remove("block");
+        }
+
+        // if (scrollY > 200) {
+        //     content.classList.add("block")
+        // } else {
+        //     content
+        // }
+      });
+    </script>
+  </body>
+</html>
