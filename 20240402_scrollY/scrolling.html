@@ -42,6 +42,13 @@
         justify-content: center;
         align-items: center;
         cursor: pointer;
+        display: none;
+      }
+      .top_box a {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
       .wrap {
         display: flex;
@@ -54,10 +61,13 @@
       .wrap ul {
         display: flex;
         height: 100%;
+        width: 600px;
       }
       .wrap li {
         height: 100%;
-        transition: 0.3s;
+        transition: 0.4s;
+        flex: 1 0 auto;
+        /* flex-grow, flex-shrink, flex-basis */
       }
       .wrap li a {
         display: flex;
@@ -70,6 +80,7 @@
       .wrap li:hover {
         background: #ace2e1;
         border-radius: 10px;
+        flex: 3 0 auto;
       }
       .wrap.fixed {
         position: fixed;
@@ -198,7 +209,7 @@
       <p>100</p>
     </div>
 
-    <div class="top_box">위로가기</div>
+    <div class="top_box"><a href="#">위로가기</a></div>
 
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
@@ -228,6 +239,16 @@
           console.log("작음");
           $(".wrap").removeClass("fixed");
         }
+        if ($("body").height() / 2 < scrollY) {
+          $(".top_box").fadeIn();
+        } else {
+          $(".top_box").fadeOut();
+        }
+      });
+
+      $(".top_box").click(function (event) {
+        event.preventDefault(); // 꼬오오옥 기억하기
+        $("html,body").animate({ scrollTop: 0 }, 500);
       });
     </script>
   </body>
