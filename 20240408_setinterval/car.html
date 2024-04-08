@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="panel">
+      <div class="bar"></div>
+      <div class="car">
+        <img src="./car.png" alt="" />
+      </div>
+    </div>
+    <div class="btnWrap">
+      <button class="startBtn">start</button>
+      <button class="stopBtn">end</button>
+    </div>
+    <script src="./jquery.min.js"></script>
+    <script>
+      // jquery
+      const nStart = $(".car").position().left;
+      const nEnd = nStart + $(".bar").width() - $(".car").width(); // 50 + 500 - 120
+      let nStep = 2; // 자동차 움직임
+      let current = nStart; // 자동차의 현재위치
+      let timeId;
+      let doubleClick = true;
+
+      // $(".startBtn").click(function(){})
+      // $(".stopBtn").click(function(){})
+
+      /* 자동차 움직일 값 넣기 */
+      $(".startBtn").click(function () {
+        if (doubleClick == true) {
+          timeId = setInterval(move, 30);
+          //   console.log(current);
+          doubleClick = false;
+        }
+      });
+      $(".stopBtn").click(function () {
+        clearInterval(timeId);
+        doubleClick = true;
+      });
+
+      function move() {
+        current += nStep; // current = current + nStep 50+2  // current = 52
+        console.log(current);
+        /* 자동차 움직임 */
+        $(".car").css("left", current);
+        /* 자동차 멈춤 */
+        if (current > nEnd) {
+          // clearInterval(timeId);
+          /* 자동차 되돌아가기 */
+          nStep = -nStep;
+          $(".car").addClass("rotate");
+        }
+        if (current < nStart) {
+          nStep = -nStep;
+          $(".car").removeClass("rotate");
+        }
+      }
+    </script>
+  </body>
+</html>
