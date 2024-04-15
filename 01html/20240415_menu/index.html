@@ -75,7 +75,17 @@
         opacity: 0;
         transition: 0.3s;
         visibility: hidden;
-        transform: translateY(20px);
+        transform: translateY(10px);
+      }
+      .submenu > ul {
+        display: flex;
+        /* justify-content: center; */
+        align-items: center;
+        gap: 16px;
+        width: 100%;
+      }
+      .submenu > ul > li > a:hover {
+        color: white;
       }
       .nav > ul > li:nth-child(1) .submenu {
         display: block;
