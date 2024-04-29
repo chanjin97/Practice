@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      ul,
+      li {
+        list-style: none;
+      }
+      table {
+        width: 100%;
+        min-width: 600px;
+        /* background: skyblue; */
+        border-collapse: collapse;
+      }
+      table,
+      tr,
+      td,
+      th {
+        /* border: 1px solid #000; */
+      }
+      tr {
+        height: 50px;
+        transition: 0.2s;
+        border-bottom: 1px solid #333;
+      }
+      tr:hover {
+        background-color: skyblue;
+      }
+      td {
+        text-align: center;
+      }
+
+      .tableWrap {
+        overflow-x: auto;
+        width: 700px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <table border="1" cellpadding="0" cellspacing="0"> -->
+    <div class="tableWrap">
+      <table>
+        <thead>
+          <colgroup>
+            <col width="10%" />
+            <col />
+            <col width="15%" />
+            <col width="17%" />
+          </colgroup>
+          <!-- <tr>
+                <th style="width: 20px">no.</th>
+                <th>subject</th>
+                <th style="width: 80px">name</th>
+                <th style="width: 100px">date</th>
+              </tr> -->
+          <tr style="background-color: #ccc">
+            <th>no.</th>
+            <th>subject</th>
+            <th>name</th>
+            <th>date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td style="text-align: left; padding-left: 10px">
+              안녕하세요오...
+            </td>
+            <td>배찬진</td>
+            <td>2024.04.29</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td style="text-align: left; padding-left: 10px">흐에...</td>
+            <td>워로드</td>
+            <td>2024.04.29</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td style="text-align: left; padding-left: 10px">흐에잉ㅇ...</td>
+            <td>블레이드</td>
+            <td>2024.04.29</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th>합계</th>
+            <td>1</td>
+            <td>100</td>
+            <td>10</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </body>
+</html>
